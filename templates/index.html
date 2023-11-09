@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Forex Converter</title>
+</head>
+<body>
+    <h1>Live Forex Converter</h1>
+
+    <form action="/convert" method="POST">
+ 
+        <label for="base">Converting from</label>
+        <input type="text" name="base" id="base">
+
+        <label for="final">Converting to</label>
+        <input type="text" name="final" id="final">
+
+        <label for="amount">Amount: </label>
+        <input type="text" name="amount" id="amount">
+
+        <button type="submit">Convert</button>
+
+
+
+
+    </form>
+
+    <div>
+        <p><b id="output">Output: </b></p>
+        <!-- <p>50</p> -->
+        {% if message %}
+            <p><b>{{message}}</b></p>
+
+        {% endif %}
+
+        {% if converted %}
+            <p>From <b>{{amount}}</b> {{base}} to {{other}}</p>
+            <p>Converted Amount: </p>
+            <p><b>{{converted_amount}}</b></p>
+
+        {% endif %}
+
+
+        <!-- {% if messsage %}
+        <p><b>{{messsage}}</b></p>
+
+        {% endif %} -->
+    </div>
+    
+</body>
+</html>
